@@ -1,4 +1,9 @@
 body{
     background-color: #414141;
     color: whitesmoke;
+    height: 100vh;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
 }

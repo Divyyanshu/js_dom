@@ -1,23 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>events</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Animals Images</h1>
-    <div>
-    <ul>
-        <li><img width="200px" src="./cow.jpg" id="cow" alt="" ></li>
-        <li><img width="200px" src="./elephnat.jpg" id="elephnat" alt="" ></li>
-        <li><img width="200px" src="./tiger.jpg" id="tiger" alt="" ></li>
-        <li><img width="200px" src="./crewl.jpg" id="crewl" alt="" ></li>
-        <li><img width="200px" src="./dogs.jpg" id="dogs" alt="" ></li>
-       <li><a href="https://google.com" id="google" target="_blank">Google</a></li>
-    </ul>
+    <div id="Images">
+      <ul>
+        <li><img width="200px" src="./cow.jpg" id="cow" alt="" /></li>
+        <li><img width="200px" src="./elephnat.jpg" id="elephnat" alt="" /></li>
+        <li><img width="200px" src="./tiger.jpg" id="tiger" alt="" /></li>
+        <li><img width="200px" src="./crewl.jpg" id="crewl" alt="" /></li>
+        <li><img width="200px" src="./dogs.jpg" id="dogs" alt="" /></li>
+        <li>
+          <a href="https://google.com" id="google" target="_blank">Google</a>
+        </li>
+      </ul>
     </div>
-    <script src="one.js"></script>
-</body>
+    <script>
+        // attachEvent()
+        // jQuery - on
+
+        // type, timestamp, defaultPrevented
+        // target, toElement, srcElement, currentTarget,
+        // clientX, clientY, screenX, screenY
+        // altkey, ctrlkey, shiftkey, keyCode
+
+//       document.getElementById("Images").addEventListener('click' , (e)=>{
+//           console.log("click url only only only")
+          
+//       },false)
+//       document.getElementById("tiger").addEventListener('click' , (e)=>{
+//           console.log("click tiger")
+//           e.stopPropagation();
+//       },false)
+
+// // false = bubbling bottom to top e.stopPropagation();
+// // true = capturing top to bottom e.stopPropagation();
+//   document.getElementById('google').addEventListener('click', (e)=>{
+//      console.log("click google")
+//      e.preventDefault();
+//      e.stopPropagation();
+//   })
+
+document.querySelector('#Images').addEventListener('click',function(e){
+        //  apply check mate 
+        console.log(e.target.tagName)
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+    // removeIt.parentNode.removeChild(removeIt)
+},false)
+
+
+    </script>
+  </body>
 </html>
